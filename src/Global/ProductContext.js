@@ -7,13 +7,10 @@ import iphone from "../assets/iphone.jpg";
 import radio from "../assets/radio.jpg";
 import shoes from "../assets/shoes.jpg";
 
-export const ProductsContext = createContext({
-  products:[],
-  toggleCart: () => {}
-});
+export const ProductsContext = createContext();
 const ProductContextProvider = (props) => {
   console.log(props);
-  const [productsList,setProductList] = useState([
+  const [products] = useState([
     {
       id: 1,
       name: "Airpod",
@@ -36,7 +33,7 @@ const ProductContextProvider = (props) => {
   ]);
 
   return (
-    <ProductsContext.Provider value={{ products: [...productsList] }}>
+    <ProductsContext.Provider value={{ products: [...products] }}>
       {props.children}
     </ProductsContext.Provider>
   );

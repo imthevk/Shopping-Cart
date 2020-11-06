@@ -1,15 +1,14 @@
-// import React, { createContext, useReducer } from "react";
-// ilobalContext from "./Global/ProductContext";
+import React, { createContext, useState } from "react"
 
 
-// export const CartContext = createContext();
+export const CartContext = createContext();
 
-// const CartContextProvider = ({ children }) => {
-//   const [cart, setCart] = useState();
-//   return (
-//     <CartContext.Provider value={{ ...cart }}>
-//       {children}
-//     </CartContext.Provider>
-//   );
-// };
-// export default CartContextProvider;
+const CartContextProvider = ({ children }) => {
+  const [cart, setCart] = useState();
+  return (
+    <CartContext.Provider value={{ ...cart }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+export default CartContextProvider;

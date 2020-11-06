@@ -1,7 +1,7 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { ProductsContext } from "../Global/ProductContext";
 export default function Products() {
- 
+  const { products } = useContext(ProductsContext);
   return (
     <div className="products">
       {products.map((product) => (
@@ -17,7 +17,11 @@ export default function Products() {
           <div className="addCart">Add to cart</div>
           {product.status === "hot" ? <div className="hot">Hot</div> : ""}
           {product.status === "new" ? <div className="new">New</div> : ""}
-          {product.status === "brand new" ? <div className="brandNew">Brand New</div> : ""}
+          {product.status === "brand new" ? (
+            <div className="brandNew">Brand New</div>
+          ) : (
+            ""
+          )}
         </div>
       ))}
     </div>
